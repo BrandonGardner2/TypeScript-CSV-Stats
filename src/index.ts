@@ -1,10 +1,6 @@
-import fs from 'fs';
+import { CSVReader } from './models/CSVReader';
 
-const matches = fs.readFileSync('football.csv', {
-  encoding: 'utf-8',
-})
-  .split('\n')
-  .map((row: string): string[] => row.split(','));
+const matches = new CSVReader('football.csv').data;
 
 
 enum MatchResult {
