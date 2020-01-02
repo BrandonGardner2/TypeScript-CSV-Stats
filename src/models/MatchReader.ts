@@ -1,8 +1,6 @@
-import { CSVReader } from './CSVReader';
+import { MatchData } from './../types/MatchData';
 import { MatchResult } from './../types/MatchResult';
 import { dateStringToDate } from './../utils';
-
-export type MatchData = [Date, string, string, number, number, MatchResult, string];
 
 // Inheritance method
 // export class Matchreader extends CSVReader<MatchData> {
@@ -19,7 +17,7 @@ export type MatchData = [Date, string, string, number, number, MatchResult, stri
 //   }
 // }
 
-// Refactor
+// Refactor composition
 interface DataReader {
   read(): void;
   data: string[][];
