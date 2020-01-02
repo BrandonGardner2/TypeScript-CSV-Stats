@@ -3,8 +3,10 @@ import fs from 'fs';
 import { dateStringToDate } from './../utils';
 import { MatchResult } from './../types/MatchResult';
 
+type MatchData = [Date, string, string, number, number, MatchResult, string];
+
 export class CSVReader {
-  data: string[][] = [];
+  data: MatchData[] = [];
 
   constructor(public filename: string) {};
 
@@ -14,7 +16,7 @@ export class CSVReader {
     })
       .split('\n')
       .map((row: string): string[] => row.split(','))
-      .map((row: string[]): any => {
+      .map((row: string[]): MatchData => {
         return [
           dateStringToDate(row[0]),
           row[1],
