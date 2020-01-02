@@ -1,7 +1,5 @@
 import fs from 'fs';
 
-import { MatchData } from './MatchReader';
-
 // Not the best
 // export class CSVReader {
 //   data: MatchData[] = [];
