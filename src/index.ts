@@ -1,12 +1,7 @@
-import { HTMLReport } from './models/HTMLReport';
 import { Summary } from './models/Summary';
-import { WinsAnalysis } from './models/WinsAnalysis';
-import { ConsoleReport } from './models/ConsoleReport';
-import { CSVReader } from './models/CSVReader';
 import { MatchReader } from './models/MatchReader';
 
-const csvFileReader = new CSVReader('football.csv');
-const matchReader = new MatchReader(csvFileReader);
+const matchReader = MatchReader.fromCsv('football.csv');
 matchReader.load();
 
 const summary = Summary.winsAnalysisConsoleReport('Man United');
