@@ -1,3 +1,4 @@
+import { HTMLReport } from './models/HTMLReport';
 import { Summary } from './models/Summary';
 import { WinsAnalysis } from './models/WinsAnalysis';
 import { ConsoleReport } from './models/ConsoleReport';
@@ -10,7 +11,7 @@ matchReader.load();
 
 const summary = new Summary(
   new WinsAnalysis('Man United'),
-  new ConsoleReport(),
+  new HTMLReport(),
 );
 
 summary.buildAndReport(matchReader.matches);
