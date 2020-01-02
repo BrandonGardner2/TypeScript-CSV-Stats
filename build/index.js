@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var CSVReader_1 = require("./models/CSVReader");
-var matches = new CSVReader_1.CSVReader('football.csv').data;
+var reader = new CSVReader_1.CSVReader('football.csv');
+reader.read();
+var matches = reader.data;
 var MatchResult;
 (function (MatchResult) {
     MatchResult["HomeWin"] = "H";

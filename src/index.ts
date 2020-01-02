@@ -1,6 +1,8 @@
 import { CSVReader } from './models/CSVReader';
 
-const matches = new CSVReader('football.csv').data;
+const reader = new CSVReader('football.csv')
+reader.read();
+const matches = reader.data;
 
 
 enum MatchResult {
